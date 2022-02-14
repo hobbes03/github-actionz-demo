@@ -19,17 +19,17 @@ jobs:
 
     steps:
       - name: Run a one-line script
-        run: echo GITHUB_TOKEN > ${{secrets.GITHUB_TOKEN}}
+        run: echo GITHUB_TOKEN xx ${{secrets.GITHUB_TOKEN}}
 
-      - run: echo runner.name > ${{runner.name}}
-      - run: echo env.SVC_URL angular > ${{env.SVC_URL }}
-      - run: echo env.ENABLE_SVC angular > ${{env.ENABLE_SVC}}
-      - run: echo env.ENABLE_SVC normal> $env.ENABLE_SVC
-      - run: echo env.SVC_URL normal> $env.SVC_URL
-      - run: echo runner > ${{runner}}
+      - run: echo runner.name xx ${{runner.name}}
+      - run: echo env.SVC_URL angular xx ${{env.SVC_URL }}
+      - run: echo env.ENABLE_SVC angular xx ${{env.ENABLE_SVC}}
+      - run: echo env.ENABLE_SVC normal xx $env.ENABLE_SVC
+      - run: echo env.SVC_URL normal xx $env.SVC_URL
+      - run: echo runner xx ${{runner}}
 
-      - run: echo env > ${{env}}
-      - run: echo github > ${{github}}
+      - run: echo env xx ${{env}}
+      - run: echo github xx ${{github}}
         
 
       - name: Run a multi-line script
