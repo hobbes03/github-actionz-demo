@@ -6,14 +6,31 @@ on:
     branches: [ main ]
 
   workflow_dispatch:
+  
+env:
+  SVC_URL: http://service.com
+  
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      ENABLE_SVC: true
 
     steps:
       - name: Run a one-line script
-        run: echo $GITHUB_TOKEN
+        run: echo GITHUB_TOKEN > ${{GITHUB_TOKEN}
+      - run: echo GITHUB_TOKEN normal > $GITHUB_TOKEN
+      - run: echo runner.name > ${{runner.name}}
+      - run: echo env.SVC_URL angular > ${{env.SVC_URL }}
+      - run: echo env.ENABLE_SVC angular > ${{env.ENABLE_SVC}}
+      - run: echo env.ENABLE_SVC normal> $env.ENABLE_SVC
+      - run: echo env.SVC_URL normal> $env.SVC_URL
+      - run: echo runner > ${{runner}}
+
+      - run: echo env > ${{env}}
+      - run: echo github > ${{github}}
+        
 
       - name: Run a multi-line script
         run: |
