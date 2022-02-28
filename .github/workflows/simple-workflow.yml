@@ -15,17 +15,10 @@ jobs:
     steps:
       - name: Run a one-line script
         run: echo GITHUB_TOKEN xx ${{secrets.GITHUB_TOKEN}} |  sed -e 's/\(.\)/\1 /g'
-      - run: echo DOB xx ${{secrets.DOB}}
-      - run: echo DOB xx ${{secrets.DOB}} |  sed -e 's/\(.\)/\1 /g'
-
-      - run: echo runner.name xx ${{runner.name}}
-      - run: echo env.SVC_URL angular xx ${{env.SVC_URL }}
-      - run: echo env.ENABLE_SVC angular xx ${{env.ENABLE_SVC}}
-      - run: echo env.ENABLE_SVC normal xx $ENABLE_SVC
-      - run: echo env.SVC_URL normal xx $SVC_URL
-        
-
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+      
+      - name: Hello world action step
+        id: hello
+        uses: pilotaccount-org/gha-action-js-1@v1.1
+        with:
+          who-to-greet: 'Pilot User'
+      
