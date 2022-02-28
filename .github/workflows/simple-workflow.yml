@@ -18,7 +18,7 @@ jobs:
       
       - name: Hello world action step
         id: hello
-        uses: pilotaccount-org/gha-action-js-1
+        uses: pilotaccount-org/gha-action-js-1@v1.1
         with:
           who-to-greet: 'Pilot User'
       
