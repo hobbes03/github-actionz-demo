@@ -1,6 +1,9 @@
 name: CI
 on:
   workflow_dispatch:
+ 
+permissions:
+  id-token: write
   
 env:
   SVC_URL: http://service.com
